@@ -3,6 +3,7 @@ import Login from "../pages/Login"
 import Home from "../pages/Home";
 import AllProducts from "../pages/AllProducts"
 import PrivateRoute from "./PrivateRoute";
+import SingleProductPage from "../pages/SingleProductPage";
 
 const AllRoutes = () => {
   return (
@@ -15,6 +16,14 @@ const AllRoutes = () => {
           element={
             <PrivateRoute>
               <AllProducts />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/products/:product_id"
+          element={
+            <PrivateRoute>
+              <SingleProductPage />
             </PrivateRoute>
           }
         />

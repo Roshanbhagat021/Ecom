@@ -1,22 +1,26 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
   const { LoggedIn } = useContext(AuthContext);
 
   async function makeloginreq() {
     try {
       const res = await axios.post(`https://reqres.in/api/login`, {
-        email: email,
-        password: password,
-      });
+          email: email,
+          password: password,
+        });
+      
 
       const {data:{token}}=res;
       LoggedIn(token)
+      navigate("/products")
 
     } catch (error) {
       console.log(error);

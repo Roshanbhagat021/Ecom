@@ -6,7 +6,7 @@ const Navbar = () => {
   const { isAuth, LogOut } = useContext(AuthContext);
 
   return (
-    <div className="flex justify-between bg-blue-300 font-semibold text-xl py-2 px-20">
+    <div className="flex justify-between text-black-500 bg-blue-300 font-semibold text-[10px]  sm:text-sm md:text-base lg:text-xl py-2 px-8 sm:px-12 md:px-16 lg:px-20 ">
       <Link to="/">HOME</Link>
       <Link to="/products">PRODUCTS</Link>
       {isAuth ? (

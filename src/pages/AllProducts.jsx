@@ -29,7 +29,7 @@ const AllProducts = () => {
   }
 
   function handelChage(e) {
-   getCetagoryData(e.target.value)
+    getCetagoryData(e.target.value);
   }
 
   useEffect(() => {
@@ -38,11 +38,12 @@ const AllProducts = () => {
 
   return (
     <div>
-      <VStack spacing={4} m={"10px auto 10px auto"} maxW={"70vw"}>
-        <Select
-          name="category"
-          onChange={(e) => handelChage(e)}
-        >
+      <VStack
+        spacing={4}
+        m={"10px auto 10px auto"}
+        className=" w-[90vw] max-w-[1000px]"
+      >
+        <Select name="category" onChange={(e) => handelChage(e)}>
           <option value="">All</option>
           <option value="men-clothing">Men's Clothing</option>
           <option value="women-clothing">Woment's Clothing</option>
